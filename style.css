@@ -1,0 +1,35 @@
+/*
+Theme Name: Twenty Seventeen Child
+Theme URI: https://wordpress.org/themes/twentyseventeen/
+Template: twentyseventeen
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Tags: one-column,two-columns,right-sidebar,flexible-header,accessibility-ready,custom-colors,custom-header,custom-menu,custom-logo,editor-style,featured-images,footer-widgets,post-formats,rtl-language-support,sticky-post,theme-options,threaded-comments,translation-ready
+Version: 2.3.1590505655
+Updated: 2020-05-26 15:07:35
+
+*/
+
+.col{
+    display: inline-block;
+}
+
+.col-30{
+    width: 33.33%;
+}
+
+.col-70{
+    width: 66.66%;
+    padding: 5px;
+}
+
+#latest-posts-on-sidebar li{
+    margin-top: 15px ;
+    border-bottom: none;
+}
+
+#latest-posts-on-sidebar h4{
+    margin: 5px 0;
+    padding: 5px 0;
+}
