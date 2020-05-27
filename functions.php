@@ -65,22 +65,18 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
                         <li>
 
                             <?php the_post_thumbnail(); ?>
-
                             <?php if ($show_latest_posts_category == 'yes'): ?>
                                 <div class="entry-meta">
                                     <?php echo get_the_category_list($post->ID); ?>
                                 </div>
                             <?php endif; ?>
-
                             <h4><a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
                                 </a>
                             </h4>
-
                             <div class="entry-meta">
                                 <?php twentyseventeen_posted_on(); ?>
                             </div>
-
 
                         </li>
                     <?php
