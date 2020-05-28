@@ -97,6 +97,41 @@ function twentyseventeen_latest_posts_on_sidebar_register( $wp_customize ) {
         )
     );
 
+    /**
+     * New Customizer category dropdown settings for the panel.
+     * Setting - latest posts section.
+     * https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_setting
+     */
+    $wp_customize->add_setting('twentyseventeen_latest_posts_category',
+        array(
+            'default' => 0,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'absint',
+        )
+    );
+
+
+
+    /**
+     * New Customizer custom category control for the panel.
+     * Controls - latest posts section.
+     * TwentySeventeen_Dropdown_Taxonomies_Control - check custom taxonomy control on inc/customizer-controls
+     * https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+     *
+     */
+    $wp_customize->add_control(new TwentySeventeen_Dropdown_Taxonomies_Control($wp_customize, 'twentyseventeen_latest_posts_category',
+        array(
+            'label' => esc_html__('Category', 'twentyseventeen'),
+            'description' => esc_html__('This is a category dropdown', 'twentyseventeen'),
+            'section' => 'latest_posts_on_sidebar',
+            'type' => 'dropdown-taxonomies',
+            'taxonomy' => 'category',
+            'priority' => 100,
+            'active_callback' => 'twentyseventeen_show_latest_posts_callback'
+
+        )
+    ));
+
 }
 //https://codex.wordpress.org/Theme_Customization_API
 add_action( 'customize_register', 'twentyseventeen_latest_posts_on_sidebar_register' );
