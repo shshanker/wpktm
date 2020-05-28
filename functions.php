@@ -79,6 +79,7 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
                             </div>
 
                         </li>
+
                     <?php
                     endwhile;
                     wp_reset_postdata();
