@@ -37,9 +37,11 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
     function twentyseventeen_latest_posts_on_sidebar()
     {
     	$all_posts = twentyseventeen_get_latest_posts( 3 );
+    	 $latest_posts_section_title = get_theme_mod('twentyseventeen_latest_posts_section_title');
         ?>
         <section id="latest-posts-on-sidebar" class="widget widget_recent_entries group-blog">
             <h2 class="widget-title">
+            	<?php echo esc_html($latest_posts_section_title); ?>
             </h2>
             <ul>
                 <?php
