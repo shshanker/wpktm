@@ -44,7 +44,10 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
         }
 
         $latest_posts_section_title = get_theme_mod('twentyseventeen_latest_posts_section_title');
+        $latest_posts_section_title = (!empty($latest_posts_section_title)) ? $latest_posts_section_title : __('Latest Posts', 'twentyseventeen');
+
         $latest_posts_category      = get_theme_mod('twentyseventeen_latest_posts_category');
+
         $show_latest_posts_category = get_theme_mod('twentyseventeen_show_latest_posts_category');
 
         $all_posts = twentyseventeen_get_latest_posts(3, $latest_posts_category);
@@ -65,7 +68,7 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
                             <?php the_post_thumbnail(); ?>
                             <?php if ($show_latest_posts_category == 'yes'): ?>
                                 <div class="entry-meta">
-                                    <?php echo get_the_category_list($post->ID); ?>
+                                    <?php echo get_the_category_list('/ '); ?>
                                 </div>
                             <?php endif; ?>
                             <h4><a href="<?php the_permalink(); ?>">
