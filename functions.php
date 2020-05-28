@@ -40,6 +40,7 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
         ?>
         <section id="latest-posts-on-sidebar" class="widget widget_recent_entries group-blog">
             <h2 class="widget-title">
+                <?php _e('Latest Posts', 'twentyseventeen'); ?>
             </h2>
             <ul>
                 <?php
