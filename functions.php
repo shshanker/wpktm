@@ -36,6 +36,13 @@ require get_stylesheet_directory() . '/inc/customizer.php';
 if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
     function twentyseventeen_latest_posts_on_sidebar()
     {
+    	// Get layout.
+        $show_latest_posts_section = get_theme_mod('twentyseventeen_show_latest_posts');
+
+        if ($show_latest_posts_section == false) {
+            return;
+        }
+
     	$all_posts = twentyseventeen_get_latest_posts( 3 );
     	 $latest_posts_section_title = get_theme_mod('twentyseventeen_latest_posts_section_title');
         ?>
