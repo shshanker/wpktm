@@ -16,9 +16,5 @@ if (!is_active_sidebar('sidebar-1')) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary"   aria-label="<?php esc_attr_e('Blog Sidebar', 'twentyseventeen'); ?>">
-    <!--    New Latest Posts Section Starts -->
-    <?php do_action('twentyseventeen_latest_posts_on_sidebar_action'); ?>
-    <!--    New Latest Posts Section Starts -->
-
-    <?php dynamic_sidebar('sidebar-1'); ?>
+      <?php dynamic_sidebar('sidebar-1'); ?>
 </aside><!-- #secondary -->
