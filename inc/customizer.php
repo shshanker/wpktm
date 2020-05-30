@@ -6,9 +6,6 @@
  */
 function twentyseventeen_latest_posts_on_sidebar_register( $wp_customize ) {
 
-    // Load customize extra controls.
-    require get_stylesheet_directory().'/inc/customizer-controls.php';
-
     // Load customize extra sanitize.
     require get_stylesheet_directory().'/inc/customizer-sanitize.php';
 
