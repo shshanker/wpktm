@@ -11,25 +11,4 @@ Updated: 2020-05-26 15:07:35
 
 */
 
-.col{
-    display: inline-block;
-}
 
-.col-30{
-    width: 33.33%;
-}
-
-.col-70{
-    width: 66.66%;
-    padding: 5px;
-}
-
-#latest-posts-on-sidebar li{
-    margin-top: 15px ;
-    border-bottom: none;
-}
-
-#latest-posts-on-sidebar h4{
-    margin: 5px 0;
-    padding: 5px 0;
-}
