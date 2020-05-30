@@ -36,6 +36,8 @@ require get_stylesheet_directory() . '/inc/customizer.php';
 if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
     function twentyseventeen_latest_posts_on_sidebar()
     {
+
+
         // Get layout.
         $show_latest_posts_section = get_theme_mod('twentyseventeen_show_latest_posts');
 
@@ -44,9 +46,8 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
         }
 
         $latest_posts_section_title = get_theme_mod('twentyseventeen_latest_posts_section_title');
-        $latest_posts_section_title = (!empty($latest_posts_section_title)) ? $latest_posts_section_title : __('Latest Posts', 'twentyseventeen');
-
         $latest_posts_category = get_theme_mod('twentyseventeen_latest_posts_category');
+        $show_latest_posts_category = get_theme_mod('twentyseventeen_show_latest_posts_category');
 
         $all_posts = twentyseventeen_get_latest_posts(3, $latest_posts_category);
 
@@ -64,9 +65,11 @@ if (!function_exists('twentyseventeen_latest_posts_on_sidebar')):
                         <li>
 
                             <?php the_post_thumbnail(); ?>
-                            <div class="entry-meta">
-                                <?php echo get_the_category_list('/ '); ?>
-                            </div>
+                            <?php if ($show_latest_posts_category == 'yes'): ?>
+                                <div class="entry-meta">
+                                    <?php echo get_the_category_list($post->ID); ?>
+                                </div>
+                            <?php endif; ?>
                             <h4><a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
                                 </a>
