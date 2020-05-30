@@ -25,4 +25,4 @@ add_action('wp_enqueue_scripts', 'twentyseventeen_parent_css', 10);
 
 // END ENQUEUE PARENT ACTION
 
-//BEGIN NEW CUSTOMIZER PANEL
+
