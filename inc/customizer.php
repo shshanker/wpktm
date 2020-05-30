@@ -132,6 +132,38 @@ function twentyseventeen_latest_posts_on_sidebar_register( $wp_customize ) {
         )
     ));
 
+
+
+    /**
+     * New Customizer radio input  settings for the panel.
+     * Setting - latest posts section.
+     * https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_setting
+     */
+    $wp_customize->add_setting( 'twentyseventeen_show_latest_posts_category', array(
+        'default' => 'yes',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'twentyseventeen_sanitize_select',
+    ) );
+
+
+    /**
+     * New Customizer custom category control for the panel.
+     * Controls - latest posts section.
+     * https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+     *
+     */
+    $wp_customize->add_control( 'twentyseventeen_show_latest_posts_category', array(
+        'type' => 'radio',
+        'section' => 'latest_posts_on_sidebar', // Add a default or your own section
+        'label' => __( 'Show Categories' ),
+        'description' => __( 'This is a custom radio input.' ),
+        'choices' => array(
+            'yes' => __( 'Yes' ),
+            'no' => __( 'No' ),
+        ),
+        'priority' => 100,
+        'active_callback' => 'twentyseventeen_show_latest_posts_callback'
+    ) );
 }
 //https://codex.wordpress.org/Theme_Customization_API
 add_action( 'customize_register', 'twentyseventeen_latest_posts_on_sidebar_register' );
